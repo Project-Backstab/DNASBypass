@@ -13,7 +13,7 @@
 
 using namespace atomizes;
 
-typedef void (DNASBypass::Client::*RequestActionFunc)(const atomizes::HTTPMessage&, const UrlRequest::UrlVariables&);
+typedef void (DNASBypass::Client::*RequestActionFunc)(const std::vector<unsigned char>&, const atomizes::HTTPMessage&, const UrlRequest::UrlVariables&);
 
 static std::map<std::string, RequestActionFunc> mRequestActions = 
 {
@@ -48,7 +48,7 @@ void DNASBypass::Client::Listen()
 		
 		while(true)
 		{
-			std::vector<char> buffer(4096, 0);
+			std::vector<unsigned char> buffer(4096, 0);
 			HTTPMessageParser http_parser;
 			HTTPMessage http_request;
 			
@@ -63,13 +63,15 @@ void DNASBypass::Client::Listen()
 			// Resize buffer
 			buffer.resize(v);
 			
+			std::vector<char> buffer2(buffer.begin(), buffer.end());
+			
 			// Parse buffer to http header
-			http_parser.Parse(&http_request, &(buffer[0]));
+			http_parser.Parse(&http_request, &(buffer2[0]));
 			
 			// Debug
 			//Logger::debug(http_request.ToString());
 			
-			this->onRequest(http_request);
+			this->onRequest(buffer, http_request);
 		}
 	}
 	
@@ -88,7 +90,7 @@ void DNASBypass::Client::Disconnect()
 /*
 	Events
 */
-void DNASBypass::Client::onRequest(const atomizes::HTTPMessage &http_request)
+void DNASBypass::Client::onRequest(const std::vector<unsigned char>& request, const atomizes::HTTPMessage &http_request)
 {
 	if(http_request.GetMethod() == MessageMethod::POST)
 	{
@@ -107,7 +109,7 @@ void DNASBypass::Client::onRequest(const atomizes::HTTPMessage &http_request)
 			RequestActionFunc func = it->second;
 		
 			// Execute action function with class object.
-			(this->*(func))(http_request, url_variables);
+			(this->*(func))(request, http_request, url_variables);
 		}
 		else
 		{
@@ -118,8 +120,28 @@ void DNASBypass::Client::onRequest(const atomizes::HTTPMessage &http_request)
 	}
 }
 
-void DNASBypass::Client::requestConnect(const atomizes::HTTPMessage& http_request, const UrlRequest::UrlVariables& url_variables)
+void DNASBypass::Client::requestConnect(const std::vector<unsigned char>& request, const atomizes::HTTPMessage& http_request, const UrlRequest::UrlVariables& url_variables)
 {
+	size_t content_length = this->_GetContentLength(http_request);
+	
+	if(request.size() < content_length)
+	{
+		return;
+	}
+	
+	// Debug
+	std::stringstream ss;
+	for(int i = request.size() - content_length; i < request.size(); i++)
+	{
+		ss << std::hex << std::setfill('0') << std::setw(2) << (int)(request[i]);
+	}
+	
+	Logger::debug(http_request.ToString());
+	Logger::debug("content_length = " + std::to_string(content_length));
+	Logger::debug("data = " + ss.str());
+	
+	
+	
 	//this->Send(response);
 	
 	//this->_LogTransaction("<--", str_request);
@@ -131,4 +153,21 @@ void DNASBypass::Client::requestConnect(const atomizes::HTTPMessage& http_reques
 void DNASBypass::Client::_LogTransaction(const std::string& direction, const std::string& response) const
 {
 	Logger::info(this->GetAddress() + " " + direction + " " + response, Server::Type::DNASBypass, true);
+}
+
+size_t DNASBypass::Client::_GetContentLength(const atomizes::HTTPMessage& http_request)
+{
+	size_t content_length = 0;
+	
+	// Get first header
+	std::string str_content_length = http_request.GetHeader("Content-Length");
+	
+	// Convert from string to integer
+	try
+	{
+		content_length = std::stoi(str_content_length);
+	}
+	catch(...) {};
+	
+	return content_length;
 }

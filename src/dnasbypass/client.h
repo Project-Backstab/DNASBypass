@@ -27,15 +27,16 @@ namespace DNASBypass
 			/*
 				Events
 			*/
-			void onRequest(const atomizes::HTTPMessage &http_request);
+			void onRequest(const std::vector<unsigned char>& request, const atomizes::HTTPMessage &http_request);
 			
 			/*
 				Requests
 			*/
-			void requestConnect(const atomizes::HTTPMessage& http_request, const UrlRequest::UrlVariables& url_variables);
+			void requestConnect(const std::vector<unsigned char>& request, const atomizes::HTTPMessage& http_request, const UrlRequest::UrlVariables& url_variables);
 			
 		private:
 			void _LogTransaction(const std::string& direction, const std::string& response) const;
+			size_t _GetContentLength(const atomizes::HTTPMessage& http_request);
 	};
 }
 
