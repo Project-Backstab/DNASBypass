@@ -1,0 +1,3 @@
+[submodule "third-party/atomizes"]
+	path = third-party/atomizes
+	url = https://github.com/tinfoilboy/atomizes.git

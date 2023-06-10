@@ -1,0 +1,7 @@
+build/
+data/log/
+download/
+libs/
+temp/
+
+src/version.h
