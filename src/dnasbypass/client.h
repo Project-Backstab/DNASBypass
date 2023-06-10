@@ -23,6 +23,8 @@ namespace DNASBypass
 			
 			void Listen();
 			void Disconnect();
+			void Send(const std::string& msg) const;
+			void Send(const std::vector<unsigned char>& msg) const;
 			
 			/*
 				Events
@@ -37,6 +39,16 @@ namespace DNASBypass
 		private:
 			void _LogTransaction(const std::string& direction, const std::string& response) const;
 			size_t _GetContentLength(const atomizes::HTTPMessage& http_request);
+		public:
+			static void Test();
+			static void GetFileName(const std::vector<unsigned char>& request, std::string& game_id, std::string& query_type,
+						std::string& file_name);
+			static void GetChecksums(const std::vector<unsigned char>& request, std::vector<unsigned char>& chksum1,
+					std::vector<unsigned char>& chksum2);
+			static void GetKeysAndSeed(const std::vector<unsigned char> chksum1, const std::vector<unsigned char> chksum2,
+					std::vector<unsigned char>& des_key1, std::vector<unsigned char>& des_key2, std::vector<unsigned char>& des_key3,
+					std::vector<unsigned char>& xor_seed);
+			static void Sign(const std::vector<unsigned char>& request, std::vector<unsigned char>& packet3);
 	};
 }
 

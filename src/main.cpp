@@ -5,12 +5,15 @@
 #include <version.h>
 #include <logger.h>
 #include <server.h>
+#include <dnasbypass/client.h>
 
 // Globals
 Server* g_dnasbypass_server;
 
 void start_gamestats_server()
-{	
+{
+	DNASBypass::Client::Test();
+	
 	g_dnasbypass_server = new Server(Server::Type::DNASBypass);	
 	g_dnasbypass_server->Listen();
 }

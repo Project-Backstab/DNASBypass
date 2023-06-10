@@ -48,10 +48,10 @@ $xor_seed = pack("H*", substr($fullkey, 0x30, 0x10));
 $packet = hex2bin("01180005010e5c55173816120907e0000033a80000001e000000008cb38e6d076d275ddf00000120d0dc9919f11e42859ae1aa193c0835847dc7573ad3e27a541d750bf6fc5212323a6cdea97e338a6d0493e330db597c914710ec1756bda55287793d990b790346af0f045e471f4f9bddd83372294b42ce065c6e5221dec7a05456aceddf7e4adeb34d0bab5c9e55e8fc1736d6d261baa5b1d5d24a094506318181dbda57e6ccbe8e1a8e013cde2e539d08fb781427b4e9fbd9f1106b75e9c0bf6df9d77f444d55e080764ef5c10c9736d6e3e94c23022f4f09e0b7c614c2409a79a35cd7c4b7b7847af5f3e30414cc813ff67431c1c2cad3a7cf3434b0652f5badb94555d233da4c29cd2f2ee2fcaf21f22353b4e61d888decbdc29d22f1f8d0ab3e267d7100c99bcef9c9b0f578d2e89c259c824225102ee2d2cb04c3c4d56e02fceb74fcb510");
 
 // step 2 - encrypt with keyset from query packet
-$packet = encrypt3($packet, 0xc8, 0x20, $des_key1, $des_key2, $des_key3, $xor_seed);
+$packet2 = encrypt3($packet, 0xc8, 0x20, $des_key1, $des_key2, $des_key3, $xor_seed);
 
 // step 3 - encrypt with envelope keyset
-$packet = encrypt3($packet, 0x28, 0x120, pack("H*", "eb711416cb0ab016"), pack("H*", "ae190174b5ce6339"), pack("H*", "7b01b91880145e34"), pack("H*", "c510a6400a9b022f"));
+$packet3 = encrypt3($packet2, 0x28, 0x120, pack("H*", "eb711416cb0ab016"), pack("H*", "ae190174b5ce6339"), pack("H*", "7b01b91880145e34"), pack("H*", "c510a6400a9b022f"));
 
 echo "fname = " . $fname . "\n";
 echo "chksum1 = " . $chksum1 . "\n";
@@ -61,7 +61,9 @@ echo "des_key1 = " . bin2hex($des_key1) . "\n";
 echo "des_key2 = " . bin2hex($des_key2) . "\n";
 echo "des_key3 = " . bin2hex($des_key3) . "\n";
 echo "xor_seed = " . bin2hex($xor_seed) . "\n";
-echo "packet = " . bin2hex($packet) . "\n";
+echo "packet2 = " . bin2hex($packet2) . "\n";
+echo "packet3 = " . bin2hex($packet3) . "\n";
+echo "packet3 length = " . strlen($packet3) . "\n";
 
 /*
 Results:
