@@ -20,6 +20,7 @@ add_executable(DNASBypass
 	src/util.cpp
 	src/server.cpp
 	src/dnasbypass/client.cpp
+	src/dnasbypass/dnas.cpp
 	src/urlrequest.cpp
 )
 

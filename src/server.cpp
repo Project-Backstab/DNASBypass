@@ -12,7 +12,13 @@ Server::Server(Server::Type type)
 	int port = 443;
 	int opt = 10; // After 10 seconds time out socket
 	
-	this->_InitSSL("../data/ssl/cert-us.pem", "../data/ssl/cert-us-key.pem", "../data/ssl/ca-cert.pem");
+	std::map<std::string, std::string> cert_key_files = {
+	//	{ "../data/ssl/cert-eu.pem", "../data/ssl/cert-eu-key.pem" },
+	//	{ "../data/ssl/cert-jp.pem", "../data/ssl/cert-jp-key.pem" },
+		{ "../data/ssl/cert-us.pem", "../data/ssl/cert-us-key.pem" },
+	};
+	
+	this->_InitSSL(cert_key_files, "../data/ssl/ca-cert.pem");
 	
 	this->_type = type;
 	
@@ -91,23 +97,34 @@ void Server::Close()
 	onServerShutdown();
 }
 
-void Server::_InitSSL(const std::string& cert_file, const std::string& key_file, const std::string& chain_file)
+void Server::_InitSSL(const std::map<std::string, std::string> cert_key_files, const std::string& chain_file)
 {
 	// Create a new SSL context for the server
     this->_ctx = SSL_CTX_new(SSLv23_server_method());
 	
-    // Load the server certificate and private key files
-    if (SSL_CTX_use_certificate_file(this->_ctx, cert_file.c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        Logger::error("Failed to load server certificate file");
-        return;
-    }
-
-    if (SSL_CTX_use_PrivateKey_file(this->_ctx, key_file.c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        Logger::error("Failed to load server private key file");
-        return;
-    }
+	for(auto files : cert_key_files)
+	{
+		// Load the server certificate and private key files
+		if (SSL_CTX_use_certificate_file(this->_ctx, files.first.c_str(), SSL_FILETYPE_PEM) <= 0)
+		{
+			Logger::error("Failed to load server certificate file \"" + files.first + "\"");
+			return;
+		}
+		else
+		{
+			Logger::info("Load certificate \"" + files.first + "\"");
+		}
+		
+		if (SSL_CTX_use_PrivateKey_file(this->_ctx, files.second.c_str(), SSL_FILETYPE_PEM) <= 0)
+		{
+			Logger::error("Failed to load server private key file \"" + files.second + "\"");
+			return;
+		}
+		else
+		{
+			Logger::info("Load private key \"" + files.second + "\"");
+		}
+	}
 	
 	// Load the CA certificate file
 	if (SSL_CTX_load_verify_locations(this->_ctx, chain_file.c_str(), nullptr) <= 0)

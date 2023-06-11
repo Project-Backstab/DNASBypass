@@ -2,6 +2,7 @@
 #define SERVER_H
 
 #include <vector>
+#include <map>
 #include <openssl/ssl.h>
 
 #include <net/socket.h>
@@ -27,7 +28,8 @@ class Server : public Net::Socket
 		void Close();
 	
 	private:
-		void _InitSSL(const std::string& cert_file, const std::string& key_file, const std::string& chain_file);
+		void _InitSSL(const std::map<std::string, std::string> cert_key_files,
+				const std::string& chain_file);
 		
 	public:
 		// Events

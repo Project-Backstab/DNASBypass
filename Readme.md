@@ -6,13 +6,11 @@ This is a project to bypass the DNAS check for online PS2 games.
 ## Clone Project
 
 ```
-git clone https://github.com/Project-Backstab/BF2MC-Matchmaker.git
-cd BF2MC-Matchmaker
+git clone https://github.com/Project-Backstab/DNASBypass.git
+cd DNASBypass
 
 git submodule init
 git submodule update
-
-sudo apt-get install libmysqlclient-dev
 ```
 
 Monitor network
@@ -20,6 +18,10 @@ Monitor network
 sudo tcpdump -D
 sudo tcpdump --interface any port 443 -w dump.pcap
 ```
+
+## OpenSSL
+
+This project requires a openssl that is compiled with sslv2, sslv3 and weak ciphers.
 
 Compile openssl 1.0.2q
 ```

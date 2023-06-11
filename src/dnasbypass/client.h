@@ -4,6 +4,9 @@
 #include <net/socket.h>
 #include <urlrequest.h>
 
+#define DES_KEY_SIZE  8
+#define XOR_KEY_SIZE  8
+
 // Forward declair
 namespace atomizes
 {
@@ -42,6 +45,7 @@ namespace DNASBypass
 		private:
 			void _LogTransaction(const std::string& direction, const std::string& response) const;
 			size_t _GetContentLength(const atomizes::HTTPMessage& http_request);
+		
 		public:
 			static void Test();
 			static void GetFileName(const std::vector<unsigned char>& packet1, std::string& game_id,
@@ -53,7 +57,16 @@ namespace DNASBypass
 			static void GetKeysAndSeed(const std::vector<unsigned char> chksum1, const std::vector<unsigned char> chksum2,
 					std::vector<unsigned char>& des_key1, std::vector<unsigned char>& des_key2,
 					std::vector<unsigned char>& des_key3, std::vector<unsigned char>& xor_seed);
-			static void Sign(const std::vector<unsigned char>& packet1, std::vector<unsigned char>& packet4);
+			static void Sign(const std::vector<unsigned char>& packet1, const std::vector<unsigned char>& packet2,
+					std::vector<unsigned char>& packet4);
+			
+			//Debug
+			static void debugFileName(std::string& game_id, std::string& query_type, std::string& file_name);
+			static void debugCheckSum(const std::vector<unsigned char> chksum1, const std::vector<unsigned char> chksum2);
+			static void debugDesKeys(const std::string& name, const std::vector<unsigned char>& des_key1, const std::vector<unsigned char>& des_key2,
+					const std::vector<unsigned char>& des_key3);
+			static void debugXorSeed(const std::string& name, const std::vector<unsigned char>& xor_seed);
+			static void debugPacket(const std::string& name, const std::vector<unsigned char>& packet);
 	};
 }
 
