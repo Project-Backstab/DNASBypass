@@ -57,7 +57,7 @@ namespace DNASBypass
 			static void GetKeysAndSeed(const std::vector<unsigned char> chksum1, const std::vector<unsigned char> chksum2,
 					std::vector<unsigned char>& des_key1, std::vector<unsigned char>& des_key2,
 					std::vector<unsigned char>& des_key3, std::vector<unsigned char>& xor_seed);
-			static void Sign(const std::vector<unsigned char>& packet1, const std::vector<unsigned char>& packet2,
+			static void Encrypt(const std::vector<unsigned char>& packet1, const std::vector<unsigned char>& packet2,
 					std::vector<unsigned char>& packet4);
 			
 			//Debug

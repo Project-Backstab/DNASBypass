@@ -108,7 +108,7 @@ void Logger::debug(const std::string& msg)
 	std::unique_lock<std::mutex> guard(g_mutex_logger); // logger lock (read/write)
 	
 	std::cout << "[" << Util::GetNowTime() << "][DEBUG] " << msg << std::endl;
-	//g_logger  << "[" << Util::GetNowTime() << "][DEBUG] " << msg << std::endl;
-	//g_logger.flush();
+	g_logger  << "[" << Util::GetNowTime() << "][DEBUG] " << msg << std::endl;
+	g_logger.flush();
 }
 
