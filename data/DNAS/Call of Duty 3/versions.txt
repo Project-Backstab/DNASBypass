@@ -1,0 +1,7 @@
+PAL:
+	SLES-54166		Call of Duty 3
+	SLES-54167		Call of Duty 3 (Europe)
+	SLES-54168		Call of Duty 3 (Germany)
+
+NTSC-U:
+	SLUS-21426		Call of Duty 3
