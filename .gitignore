@@ -1,6 +1,7 @@
 build/
 data/log/
 data/reverse
+data/intel
 download/
 libs/
 temp/
