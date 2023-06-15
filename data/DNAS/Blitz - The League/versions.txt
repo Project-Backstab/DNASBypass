@@ -1,0 +1,2 @@
+NTSC-U:
+	SLUS-21128		Blitz: The League

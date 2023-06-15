@@ -1,0 +1,2 @@
+PAL:
+	SLES-52573		Conflict: Global Storm (English French German Italian Spanish)

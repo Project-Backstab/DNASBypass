@@ -1,0 +1,9 @@
+PAL:
+	SLES-52753		FlatOut (English French Italian Spanish)	Not Online
+	SLES-52754		FlatOut (German)							Not Online
+
+NTSC-U:
+	SLUS-20901		FlatOut
+
+NTSC-J:
+	

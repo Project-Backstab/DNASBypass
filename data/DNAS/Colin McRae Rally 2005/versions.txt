@@ -1,0 +1,2 @@
+PAL:
+	SLES-52636	Colin McRae Rally 2005 (English French German Italian Spanish)

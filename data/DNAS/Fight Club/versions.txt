@@ -1,0 +1,9 @@
+PAL:
+	SLES-52718		Fight Club (English French German Italian Spanish)
+
+NTSC-U:
+	SLUS-29124		Fight Club (Demo)
+	SLUS-20857		Fight Club
+
+NTSC-J:
+	

@@ -1,0 +1,10 @@
+Info: DNAS never used?! WTF?!
+
+PAL:
+	SLES-51814		ATV Offroad Fury 2				Not online
+
+NTSC-U:
+	SCUS-97238		ATV Offroad Fury 2 (Demo)
+	SCUS-97211		ATV Offroad Fury 2
+	SCUS-97211		ATV Offroad Fury 2
+	SCUS-97211		ATV Offroad Fury 2
