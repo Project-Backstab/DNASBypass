@@ -1,8 +1,5 @@
-Collected:
-
-
 PAL:
-	SLES-53754 	 ATV Off-Road Fury 3
+	SLES-53754 	 ATV Off-Road Fury 3			Not online
 
 NTSC-U:
 	SCUS-97405 	 ATV Off-Road Fury 3

@@ -1,0 +1,13 @@
+Collected:
+	SLUS-20595
+
+PAL:
+	SLED-53440		Area 51 demo
+	SLES-52570		Area 51
+	SLES-53075		Area 51	Germany
+
+NTSC-U:
+	SLUS-20595		Area 51
+
+NTSC-J:
+	SLPM-66468		Area 51

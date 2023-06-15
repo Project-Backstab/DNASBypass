@@ -1,0 +1,17 @@
+Collected:
+	SLES-53415
+	SLES-53416
+	SLES-53417
+	SLUS-21228
+
+PAL:
+	SLES-53415		Call of Duty 2: Big Red One
+	SLES-53416		Call of Duty 2: Big Red One (French Italian Spanish)
+	SLES-53722		Call of Duty 2: Big Red One (Europe, Australia)
+	SLES-53417		Call of Duty 2: Big Red One (Germany)
+
+NTSC-U:
+	SLUS-21228		Call of Duty 2: Big Red One
+
+NTSC-J:
+	SLPM-66328		Call of Duty 2: Big Red One

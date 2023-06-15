@@ -1,0 +1,20 @@
+Collected:
+	SLES-52584
+	SLES-52585
+	SLUS-21050
+
+PAL:
+	SLAJ 25053		Burnout 3: Takedown
+	SLED-52597		Burnout 3: Takedown Demo
+	SLES-52584		Burnout 3: Takedown
+	SLES-52585		Burnout 3: Takedown
+
+NTSC-U:
+	SLUS 29113		Burnout 3: Takedown Demo
+	SLUS-21050		Burnout 3: Takedown
+
+NTSC-J:
+	SLPM-60246		Burnout 3: Takedown
+	SLPM-65719		Burnout 3: Takedown
+	SLKA-25206		Burnout 3: Takedown
+
