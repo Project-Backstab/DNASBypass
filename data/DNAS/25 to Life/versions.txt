@@ -1,0 +1,6 @@
+PAL:
+	SLES-53199		25 to Life			Not online
+
+NTSC-U:
+	SLUS-29129		25 to Life (Beta)
+	SLUS-21016		25 to Life

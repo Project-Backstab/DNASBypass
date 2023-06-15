@@ -1,0 +1,6 @@
+Collected:
+	SLPS-25527
+
+NTSC-J:
+	SLPM-68521		.hack//frägment (Senkou Release-ban)
+	SLPS-25527		.hack//frägment

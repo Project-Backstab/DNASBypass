@@ -1,0 +1,16 @@
+Collected:
+	SLUS-20744
+
+PAL:
+	SCED-51728		EverQuest: Online Adventures (Demo)	2
+	SCES-51648		EverQuest: Online Adventures
+	SCES-51725		EverQuest: Online Adventures (English French German)
+
+NTSC-U:
+	SLUS-28020		EverQuest: Online Adventures (Beta)
+	SLUS-28021		EverQuest: Online Adventures (Beta)
+	SLUS-28026		EverQuest: Online Adventures (Beta)
+	SLUS-20470		EverQuest: Online Adventures			Cant grab pass_phrase/auth_data
+	SLUS-29050		EverQuest: Online Adventures (Demo)
+	SLUS-29063		EverQuest: Online Adventures: Frontiers (Beta)
+	SLUS-20744		EverQuest: Online Adventures: Frontiers

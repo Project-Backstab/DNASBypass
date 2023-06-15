@@ -1,0 +1,10 @@
+PAL:
+	SLES-52782		Call of Duty: Finest Hour (Europe, Australia)
+	SLES-52783		Call of Duty: Finest Hour (French Italian Spanish)
+	SLES-52784		Call of Duty: Finest Hour (German)
+
+NTSC-U:
+	SLUS-20725		Call of Duty: Finest Hour
+
+NTSC-J	
+	SLPM-66159		Call of Duty: Finest Hour					Not Online

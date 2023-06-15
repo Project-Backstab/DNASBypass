@@ -1,0 +1,9 @@
+PAL:
+	SLES-53039		Champions: Return to Arms(English French German Spanish)
+
+NTSC-U:
+	SLUS-29126		Champions: Return to Arms (Demo)
+	SLUS-20973		Champions: Return to Arms	
+
+NTSC-J:
+	

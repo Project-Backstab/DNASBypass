@@ -1,0 +1,15 @@
+
+PAL:
+	SLED-53512		Burnout Revenge (Demo)
+	SLED-53637		Burnout Revenge (Demo)(French German)
+	SLES-53506		Burnout Revenge (Dutch Finnish Italian Spanish Swedish)
+	SLES-53507		Burnout Revenge (English French German)		Cant grab pass_phrase/auth_data
+
+NTSC-U:
+	SLUS-21242		Burnout Revenge								Cant grab pass_phrase/auth_data
+	SLUS-29153		Burnout Revenge (Demo)
+
+NTSC-J:
+	SLAJ-25066		Burnout Revenge
+	SLPM-66108		Burnout Revenge (Japanese)
+	SLKA-25304		Burnout Revenge (Korean)

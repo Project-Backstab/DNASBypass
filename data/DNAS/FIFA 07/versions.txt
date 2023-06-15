@@ -1,0 +1,11 @@
+Info: Cant extract auth_data/pass_phrase
+
+PAL:
+	SLAJ-25088		FIFA 07 (English Spanish)
+	SLED-54327		FIFA 07 (Demo) (English French German Italian Portuguese Spanish Swedish)
+	TLES-54240		FIFA 07 (Beta)
+	SLES-54246		FIFA 07 (Czech English Hungarian Polish Russian)
+	SLES-54244		FIFA 07 (Danish Dutch English Norwegian Swedish)
+	SLES-54241		FIFA 07 (French German Italian)
+	SLES-54243		FIFA 07 (Portuguese Spanish)
+	SLES-54240		FIFA 07 (Europe, Australia)

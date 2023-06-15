@@ -1,0 +1,2 @@
+PAL:
+	SCES-53449	AFL Premiership 2005

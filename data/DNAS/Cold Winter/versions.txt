@@ -1,0 +1,14 @@
+Collected:
+	SLES-52963
+	SLUS-20845
+
+PAL:
+	SLED-53327		Cold Winter (Demo)
+	SLES-52963		Cold Winter (English French Italian Spanish)
+	SLES-53093		Cold Winter (Germany)
+
+NTSC-U:
+	SLUS-20845		Cold Winter
+
+NTSC-J:
+	

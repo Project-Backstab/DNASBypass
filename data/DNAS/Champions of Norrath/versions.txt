@@ -1,0 +1,15 @@
+Collected:
+	SLES-52325
+	SLUS-20565
+
+PAL:
+	SLES-52325		Champions of Norrath (English French German)
+	SLES-52373		Champions of Norrath (English Spanish)
+
+NTSC-U:
+	SLUS-29088		Champions of Norrath (Demo)	
+	SLUS-20565		Champions of Norrath
+	SLUS-29085		Champions of Norrath: Realms of Everquest (Beta)
+
+NTSC-J:
+	
