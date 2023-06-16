@@ -1,0 +1,6 @@
+PAL:
+	SCES-53950		Formula One 06				Not Online?
+	SCED-54207		Formula One 06 (Demo)
+
+NTSC-J:
+	SCPS-15117		Formula One 06 (Japanese)

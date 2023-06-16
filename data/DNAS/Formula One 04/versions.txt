@@ -1,0 +1,12 @@
+Collected:
+	SCES-52042
+
+PAL:
+	TCES-52042		Formula One 04 (Beta)
+	SCED-52687		Formula One 04 (Demo)(English Finnish French German Italian Spanish)
+	SCES-52042		Formula One 04 (English Finnish French German Italian Spanish)
+	SCES-52042		Formula One 04 (English Finnish French German Italian Spanish)
+
+NTSC-J:
+	SCCS-40019		Formula One 04
+	SCPS-15083		Formula One 04 (Japanese)
