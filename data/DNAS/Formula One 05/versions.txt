@@ -5,7 +5,7 @@ PAL:
 	TCES-53033		Formula One 05 (Beta)
 	SCED-53448		Formula One 05 (Demo)
 	SCED-53447		Formula One 05 (Demo)(English French German Italian Spanish)
-	SCES-53033		Formula One 05(English Finnish French German Italian Portuguese Spanish)
+	SCES-53033		Formula One 05 (English Finnish French German Italian Portuguese Spanish)
 
 NTSC-J:
 	SCPS 15098		Formula One 05 (Japan)

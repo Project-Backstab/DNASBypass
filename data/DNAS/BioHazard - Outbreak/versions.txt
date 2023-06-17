@@ -1,0 +1,6 @@
+Collected:
+	SLPM-65428
+
+NTSC-J:
+	SLPM-65428		Biohazard: Outbreak
+	SLPM-65692		Biohazard: Outbreak: File 2

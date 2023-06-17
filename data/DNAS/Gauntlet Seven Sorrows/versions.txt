@@ -1,0 +1,6 @@
+PAL:
+	SLES-53667		Gauntlet: Seven Sorrows (English French German Italian Spanish)
+
+NTSC-U:
+	SLUS-21077		Gauntlet: Seven Sorrows
+	

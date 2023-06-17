@@ -1,0 +1,12 @@
+Collected:
+	SLUS-20765
+
+PAL:
+	SLES-51589		Resident Evil: Outbreak (English French German Italian Spanish)				Not Online
+	SLES-53319		Resident Evil: Outbreak: File #2 (English French German Italian Spanish)
+
+NTSC-U:
+	SLUS-20765		Resident Evil: Outbreak
+	SLUS-29089		Resident Evil: Outbreak (Beta)
+	SLUS-20984		Resident Evil: Outbreak: File #2
+

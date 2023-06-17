@@ -1,0 +1,8 @@
+PAL:
+	SCES-50791		Frequency (English French German Italian Spanish)		Not Online
+	SCED-50990		Frequency (Demo)
+
+NTSC-U:
+	SCUS-97125		Frequency												Not Online
+	SCUS-97157		Frequency (Demo)
+
