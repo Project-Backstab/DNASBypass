@@ -1,3 +1,5 @@
+Info: breakpoint only been used on initialization of DNAS, but not to release the modulo
+
 Collected:
 	SLES-52325
 	SLUS-20565

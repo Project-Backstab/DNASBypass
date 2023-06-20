@@ -1,3 +1,5 @@
+Info: Can't get breakpoint in eememory.
+
 Collected:
 	SLES-52768
 	SLUS-21103
