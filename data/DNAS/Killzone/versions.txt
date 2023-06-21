@@ -1,0 +1,18 @@
+Collected:
+	TCES-52004
+	SCUS-97402
+
+PAL:
+	TCES-52004		Killzone (Beta)
+	SCES-52893		Killzone (English Greek Russian)						Not online
+	SCED-52846		Killzone (Demo)
+	SCED-52759		Killzone (Demo)
+	SCES-52004		Killzone (Dutch English French German Italian Spanish)
+NTSC-J:
+	SLPM-66151		Killzone (Japanese)
+	SCKA-20048		Killzone (Korean)
+
+NTSC-U:
+	SCUS-97432		Killzone (Demo)
+	SCUS-97431		Killzone (Beta)
+	SCUS-97402		Killzone
