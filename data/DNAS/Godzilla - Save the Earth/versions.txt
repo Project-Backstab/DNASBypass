@@ -1,0 +1,6 @@
+PAL:
+	SLES-52766		Godzilla: Save the Earth (English French German Italian Spanish)	Not online
+
+NTSC-U:
+	SLUS-20809		Godzilla: Save the Earth
+	
