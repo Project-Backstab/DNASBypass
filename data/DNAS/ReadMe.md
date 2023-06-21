@@ -8,7 +8,7 @@ With this project we extract the DNAS information for each game that is been use
 - Authentication data: Encrypted file with Public 1024 bits RSA keys stored.
 - Modulo: RSA public key modulo(n). This value is the product of 2 unknown large prime factors.
 - Exponent: RSA public key exponent(e).
-- Breakpoint: Debug address that has the modulo stored
+- Breakpoint: Debugger breakpoint addresses to stop the emulator on specific functions.
 
 Both Modulo and Exponent are used to decrypt the signature to a message with PKCS1.5.
 

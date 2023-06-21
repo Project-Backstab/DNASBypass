@@ -1,4 +1,2 @@
-Info: Can't get Breakpoint in eememory.
-
 PAL:
 	SLES-52573		Conflict: Global Storm (English French German Italian Spanish)

@@ -1,5 +1,3 @@
-Info: Breakpoint doesnt get triggered(SLES-52782, SLES-52784 and SLUS-20725)
-
 PAL:
 	SLES-52782		Call of Duty: Finest Hour (Europe, Australia)
 	SLES-52783		Call of Duty: Finest Hour (French Italian Spanish)

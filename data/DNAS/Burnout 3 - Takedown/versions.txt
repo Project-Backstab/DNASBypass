@@ -1,5 +1,3 @@
-Info: Manage to get breakpoints but not all breakpoints dont get modulo
-
 Collected:
 	SLES-52584
 	SLES-52585
