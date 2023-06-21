@@ -13,9 +13,9 @@ Server::Server(Server::Type type)
 	int opt = 10; // After 10 seconds time out socket
 	
 	std::map<std::string, std::string> cert_key_files = {
-		{ "../data/ssl/cert-eu.pem", "../data/ssl/cert-eu-key.pem" },
+	//	{ "../data/ssl/cert-eu.pem", "../data/ssl/cert-eu-key.pem" },
+		{ "../data/ssl/cert-us.pem", "../data/ssl/cert-us-key.pem" },
 	//	{ "../data/ssl/cert-jp.pem", "../data/ssl/cert-jp-key.pem" },
-	//	{ "../data/ssl/cert-us.pem", "../data/ssl/cert-us-key.pem" },
 	};
 	
 	this->_InitSSL(cert_key_files, "../data/ssl/ca-cert.pem");
