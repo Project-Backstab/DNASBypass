@@ -19,3 +19,8 @@ In the near future there could be a breakthrough in prime factorisation to crack
 Think about Quantum computers as example that can use [QFT](https://en.wikipedia.org/wiki/Quantum_Fourier_transform) to solve this problem.
 Also the largest known prime factor that has been publicly factored is in [2020 with 829-bits product](https://en.wikipedia.org/wiki/RSA_numbers#RSA-250).
 
+## What happends when the keys are been cracked?
+
+Once we have the private RSA key we can sign our own messages.
+This means we can fully replicate the DNAS protocol.
+This will result that you dont need a patch anymore to play online.
