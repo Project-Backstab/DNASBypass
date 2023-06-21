@@ -7,7 +7,10 @@ With this project we extract the DNAS information for each game that is been use
 - Pass phrase: This is been used to decrypt the Authentication data.
 - Authentication data: Encrypted file with Public 1024 bits RSA keys stored.
 - Modulo: RSA public key modulo(n). This value is the product of 2 unknown large prime factors.
+- Exponent: RSA public key exponent(e).
 - Breakpoint: Debug address that has the modulo stored
+
+Both Modulo and Exponent are used to decrypt the signature to a message with PKCS1.5.
 
 ## What do we want to accomplish?
 

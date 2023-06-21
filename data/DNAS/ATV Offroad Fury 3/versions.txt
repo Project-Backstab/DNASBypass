@@ -1,5 +1,3 @@
-Info: Manage to get breakpoints but those breakpoints dont get modulo
-
 PAL:
 	SLES-53754 	 ATV Off-Road Fury 3			Not online
 

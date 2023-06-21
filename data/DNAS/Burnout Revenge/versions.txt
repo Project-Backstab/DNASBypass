@@ -1,4 +1,3 @@
-
 PAL:
 	SLED-53512		Burnout Revenge (Demo)
 	SLED-53637		Burnout Revenge (Demo)(French German)

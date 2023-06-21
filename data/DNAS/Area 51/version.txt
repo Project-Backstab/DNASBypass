@@ -1,5 +1,3 @@
-Info: Manage to get breakpoints but those breakpoints dont get modulo
-
 Collected:
 	SLUS-20595
 

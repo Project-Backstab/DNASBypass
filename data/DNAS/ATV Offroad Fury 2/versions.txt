@@ -1,4 +1,4 @@
-Info: DNAS never used?! WTF?!
+Info: DNAS not used
 
 PAL:
 	SLES-51814		ATV Offroad Fury 2				Not online
