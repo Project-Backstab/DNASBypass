@@ -1,0 +1,5 @@
+PAL:
+	SLES-54123		Marvel: Ultimate Alliance (English Italian)
+
+NTSC-U:
+	SLUS-21374		Marvel: Ultimate Alliance

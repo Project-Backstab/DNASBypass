@@ -1,0 +1,15 @@
+Collected:
+	SLES-53044
+	SLUS-20872
+
+PAL:
+	SLES-53044		Juiced (English French German Spanish)
+	SLED-53109		Juiced (Demo) (English French German Italian Spanish)
+	SLES-53151		Juiced (Italian)
+
+NTSC-J:
+	SLKA-25283		Juiced
+
+NTSC-U:
+	SLUS-20872		Juiced
+	SLUS-29147		Juiced (Demo)

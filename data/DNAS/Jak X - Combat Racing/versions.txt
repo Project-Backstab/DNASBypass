@@ -1,0 +1,7 @@
+Collected:
+	SCUS-97429
+
+NTSC-U:
+	SCUS-97429		Jak X: Combat Racing (English French German Italian Portuguese Russian Spanish)
+	SCUS-97486		Jak X: Combat Racing (Demo)
+	SCUS-97488		Jak X: Combat Racing (Beta)

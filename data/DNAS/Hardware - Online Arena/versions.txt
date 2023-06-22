@@ -1,0 +1,7 @@
+Collected:
+	SCES-51593
+
+PAL:
+	SCES-51977		Hardware: Online Arena
+	SCES-51593		Hardware: Online Arena (Beta)
+	SCES-51593		Hardware: Online Arena (English French German Italian Spanish)

@@ -9,7 +9,7 @@ PAL:
 	SCED-52759		Killzone (Demo)
 	SCES-52004		Killzone (Dutch English French German Italian Spanish)
 NTSC-J:
-	SLPM-66151		Killzone (Japanese)
+	SLPM-66151		Killzone (Japanese)										Not online
 	SCKA-20048		Killzone (Korean)
 
 NTSC-U:

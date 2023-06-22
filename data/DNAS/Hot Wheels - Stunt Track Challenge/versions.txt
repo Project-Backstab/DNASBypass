@@ -1,0 +1,5 @@
+PAL:
+	SLES-52481		Hot Wheels: Stunt Track Challenge
+
+NTSC-U:
+	SLUS-20954		Hot Wheels: Stunt Track Challenge

@@ -1,0 +1,7 @@
+PAL:
+	SLES-52942		Midnight Club 3: DUB Edition(English French German Italian Spanish)
+	SLES-53717		Midnight Club 3: DUB Edition Remix (English French German Italian Spanish)
+
+NTSC-U:
+	SLUS-21029		Midnight Club 3: DUB Edition
+	SLUS-21355		Midnight Club 3: DUB Edition Remix

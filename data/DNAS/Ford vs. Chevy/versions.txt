@@ -1,11 +1,5 @@
-Collected:
-	SLUS-21276
-
 PAL:
 	SLES-53698		Ford vs. Chevy (English French German Italian Spanish)
 
 NTSC-U:
 	SLUS-21276		Ford vs. Chevy
-
-NTSC-J:
-	
