@@ -1,8 +1,8 @@
 PAL:
-	SCED-52578		Gran Turismo 4 (Demo) (English French German Italian Spanish)
+	SCED-52578		Gran Turismo 4 (Demo)									
 	SCED-52681		Gran Turismo 4 (Demo)
-	SCES-51719		Gran Turismo 4 (English French German Italian Spanish)
-	SCES-52438		Gran Turismo 4: Prologue (English French German Italian Spanish)
+	SCES-51719		Gran Turismo 4 											Not online
+	SCES-52438		Gran Turismo 4: Prologue								Not online
 
 NTSC-J:
 	SCAJ-20066		Gran Turismo 4: Prologue (Chinese)
@@ -17,11 +17,11 @@ NTSC-J:
 	SCKA-20022		Gran Turismo 4: Prologue (Korean)
 	SCKA-30001		Gran Turismo 4 (Korean)
 	SCPS-15055		Gran Turismo 4: Prologue (Japanese)
+	SCPS-17001		Gran Turismo 4											Not online
 	SCCS-60002		Gran Turismo 4 (Chinese)
 	PCPX-96649		Gran Turismo 4: First Preview (English Japanese)
-
 NTSC-U:
 	SCUS-90682		Gran Turismo 4
-	SCUS-97328		Gran Turismo 4
+	SCUS-97328		Gran Turismo 4											Not online
 	SCUS-97436		Gran Turismo 4 (Beta)
 	SCUS-97483		Gran Turismo 4: Mazda MX-5 Edition (Demo)

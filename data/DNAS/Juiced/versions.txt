@@ -1,6 +1,7 @@
 Collected:
 	SLES-53044
 	SLUS-20872
+	SLES-53151
 
 PAL:
 	SLES-53044		Juiced (English French German Spanish)
