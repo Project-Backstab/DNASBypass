@@ -1,0 +1,5 @@
+PAL:
+	SLES-53490		Outlaw Tennis
+
+NTSC-U:
+	SLUS-21190		Outlaw Tennis

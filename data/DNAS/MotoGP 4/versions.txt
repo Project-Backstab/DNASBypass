@@ -1,0 +1,1 @@
+Info: Can't pass loading memory card screen in pcsx2 1.7 emulator.
