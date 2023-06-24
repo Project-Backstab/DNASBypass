@@ -78,14 +78,13 @@ def main():
 			
 			modulos.append(n)
 			
-			print("		n      : {}".format(n))
-			print("		e      : {}".format(e))
+			print("		n        : {}".format(n))
+			print("		e        : {}".format(e))
 			
 			for signature in signatures:
 				message = hex(pow(signature, e, n))
 				
-				#if(message.startswith('0x1ffffffffffffffff')):
-				if(message.startswith('0x1fffffffff')):
+				if(message.startswith('0x1ffffffffffffffff00')):
 					print("		sig      : {}".format(signature))
 					print("		sig (hex): {}".format(hex(signature)))
 					print("		message  : {}".format(message))
