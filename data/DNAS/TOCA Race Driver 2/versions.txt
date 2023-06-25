@@ -1,0 +1,9 @@
+PAL:
+	SLED-52851		TOCA Race Driver 2 (Demo)
+	SLES-52637		TOCA Race Driver 2
+	
+NTSC-U:
+	SLUS-21039		TOCA Race Driver 2
+
+NTSC-J:
+	SLPM 66498		TOCA Race Driver 2: Ultimate Racing Simulator (Japanese)

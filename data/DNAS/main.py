@@ -66,6 +66,7 @@ def main():
 		
 		game_path = "{}{}/".format(root_dir, game_name)
 		game_versions = [name for name in os.listdir(game_path) if os.path.isdir(os.path.join(game_path, name))]
+		game_versions.sort() 
 		
 		for game_version in game_versions:
 			print("	{}:".format(game_version))
