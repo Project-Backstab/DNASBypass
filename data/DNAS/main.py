@@ -21,7 +21,6 @@ def readSignature(file_path):
 		return int.from_bytes(f.read(0x80), byteorder='big')
 	return -1
 
-
 def testModulos(modulos):
 	g = 1;
 	for modulo in modulos:
@@ -93,5 +92,6 @@ def main():
 	
 	## Do tests
 	#testModulos(modulos)
+
 
 main()
