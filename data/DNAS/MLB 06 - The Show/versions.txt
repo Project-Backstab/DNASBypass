@@ -1,0 +1,6 @@
+NTSC-J:
+	SCKA-20071		MLB 06: The Show		Not Online
+
+NTSC-U:
+	SCUS-97500		MLB 06: The Show
+	SCUS-97503		MLB 06: The Show		Not Online

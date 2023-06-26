@@ -1,0 +1,2 @@
+Info: DNAS domain is totally different: ts01.eu.dnas.playstation.org
+Because of this i can't extract the public key. Will do it later

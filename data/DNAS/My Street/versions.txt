@@ -1,0 +1,7 @@
+PAL:
+	SCES-51677		My Street
+
+NTSC-U:
+	SCUS-97263		My Street (Demo)		Not Online
+	SCUS-97212		My Street				No DNAS check
+

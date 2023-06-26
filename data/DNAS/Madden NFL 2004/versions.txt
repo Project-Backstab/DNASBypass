@@ -1,0 +1,8 @@
+PAL:
+	SLES-51797		Madden NFL 2004		Not online
+
+NTSC-U:
+	SLUS-20752		Madden NFL 2004
+
+NTSC-J:
+	SLKA-25095		Madden NFL 2004

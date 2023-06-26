@@ -1,0 +1,9 @@
+PAL:
+	SLES-54248		Madden NFL 07		Not online
+
+NTSC-U:
+	SLUS-21476		Madden NFL 07
+	SLUS-21477		Madden NFL 07
+
+NTSC-J:
+	SLPM-66600		Madden NFL 07
