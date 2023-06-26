@@ -1,0 +1,5 @@
+PAL:
+	SLES-52982		NFL Street 2			Not online
+
+NTSC-U:
+	SLUS-21118		NFL Street 2
