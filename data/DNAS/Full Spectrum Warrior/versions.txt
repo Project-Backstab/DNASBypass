@@ -1,0 +1,9 @@
+PAL:
+	SLES-53114		Full Spectrum Warrior
+	SLES-53131		Full Spectrum Warrior
+
+NTSC-U:
+	SLUS-21145		Full Spectrum Warrior
+
+NTSC-J:
+	SLPM 66263		Full Spectrum Warrior		Not online

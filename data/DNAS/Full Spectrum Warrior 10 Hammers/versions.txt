@@ -1,0 +1,9 @@
+PAL:
+	SLES-53656		Full Spectrum Warrior: Ten Hammers
+	SLES-53909		Full Spectrum Warrior: Ten Hammers
+
+NTSC-U:
+	SLUS-21250		Full Spectrum Warrior: Ten Hammers
+
+NTSC-J:
+	SLPM 66427		Full Spectrum Warrior 2: Ten Hammers		Not online
