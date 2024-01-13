@@ -1,0 +1,5 @@
+PAL:
+	SLES-54255		King of Fighters, The - Maximum Impact 2				Not online
+
+NTSC-J:
+	SLPS-25609		King of Fighters, The - Maximum Impact 2
