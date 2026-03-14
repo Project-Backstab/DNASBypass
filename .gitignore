@@ -5,5 +5,6 @@ data/intel
 download/
 libs/
 temp/
+data/ssl/ca-key.pem
 
 src/version.h
