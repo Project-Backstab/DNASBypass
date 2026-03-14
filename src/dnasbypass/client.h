@@ -4,6 +4,8 @@
 #include <net/socket.h>
 #include <urlrequest.h>
 
+#include <memory>
+
 #define DES_KEY_SIZE  8
 #define XOR_KEY_SIZE  8
 
@@ -15,7 +17,7 @@ namespace atomizes
 
 namespace DNASBypass
 {
-	class Client : public Net::Socket
+	class Client : public Net::Socket, public std::enable_shared_from_this<DNASBypass::Client>
 	{
 		private:
 			SSL* _ssl;

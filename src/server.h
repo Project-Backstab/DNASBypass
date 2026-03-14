@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <openssl/ssl.h>
+#include <memory>
 
 #include <net/socket.h>
 
@@ -17,7 +18,7 @@ class Server : public Net::Socket
 		};
 	
 	private:
-		std::vector<Net::Socket*> _clients;
+		std::vector<std::shared_ptr<Net::Socket>> _clients;
 		Server::Type              _type;
 		SSL_CTX*                  _ctx;
 	
@@ -35,8 +36,8 @@ class Server : public Net::Socket
 		// Events
 		void onServerListen() const;
 		void onServerShutdown() const;
-		void onClientConnect(const Net::Socket& client) const;
-		void onClientDisconnect(const Net::Socket& client);
+		void onClientConnect(const std::shared_ptr<Net::Socket>& client) const;
+		void onClientDisconnect(const std::shared_ptr<Net::Socket>& client);
 };
 
 #endif // SERVER_H

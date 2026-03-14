@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <unistd.h>
 #include <thread>
+#include <memory>
 
 #include <logger.h>
 #include <dnasbypass/client.h>
@@ -67,24 +68,39 @@ void Server::Listen()
 			exit(EXIT_FAILURE);
 		}
 		
-		SSL* ssl = SSL_new(this->_ctx);
-		
-		Net::Socket* client = new DNASBypass::Client(client_socket, client_address, ssl);
-		
-		this->onClientConnect(*client);
-		
-		std::thread t(&DNASBypass::Client::Listen, (DNASBypass::Client*)client);
-		t.detach();
-		
-		this->_clients.push_back(client);
+		switch(this->_type)
+		{
+			case Server::Type::DNASBypass:
+			{
+				std::lock_guard<std::mutex> guard(this->_mutex); // server lock
+
+				SSL* ssl = SSL_new(this->_ctx);
+				
+				std::shared_ptr<Net::Socket> client = std::make_shared<DNASBypass::Client>(client_socket, client_address, ssl);
+				
+				this->_clients.push_back(client);
+				
+				this->onClientConnect(client);
+				
+				std::thread t([client]() {
+					static_cast<DNASBypass::Client*>(client.get())->Listen();
+				});
+				t.detach();
+			}
+		}
 	}
 }
 
 void Server::DisconnectAllClients()
 {
-	for(Net::Socket* client : this->_clients)
+	for(std::shared_ptr<Net::Socket> client : this->_clients)
 	{
-		// ((GPSP::Client*)client)->Disconnect();
+		switch(this->_type)
+		{
+			case Server::Type::DNASBypass:
+				dynamic_cast<DNASBypass::Client*>(client.get())->Disconnect();
+			break;
+		}
 	}
 }
 
@@ -147,21 +163,23 @@ void Server::onServerShutdown() const
 	Logger::info("Server shutdown");
 }
 
-void Server::onClientConnect(const Net::Socket& client) const
+void Server::onClientConnect(const std::shared_ptr<Net::Socket>& client) const
 {
-	Logger::info("Client " + client.GetAddress() + " connected");
+	Logger::info("Client " + client->GetAddress() + " connected", this->_type);
 }
 
-void Server::onClientDisconnect(const Net::Socket& client)
+void Server::onClientDisconnect(const std::shared_ptr<Net::Socket>& client)
 {
-	Logger::info("Client " + client.GetAddress() + " disconnected");
+	std::lock_guard<std::mutex> guard(this->_mutex); // server lock
 	
-	auto it = std::find(this->_clients.begin(), this->_clients.end(), const_cast<Net::Socket*>(&client));
+	auto it = std::find(_clients.begin(), _clients.end(), client);
+	
+	// When found remove client
 	if (it != this->_clients.end())
 	{
+		Logger::info("Client " + client.get()->GetAddress() + " disconnected", this->_type);
+
 		this->_clients.erase(it);
-		
-		delete &client;
 	}
 }
 

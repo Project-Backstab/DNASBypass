@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 #include <net/socket.h>
+#include <logger.h>
 
 Net::Socket::Socket()
 {
@@ -11,7 +12,14 @@ Net::Socket::Socket()
 
 void Net::Socket::Close()
 {
-	close(this->_socket);
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+
+	if(this->_socket != -1)
+	{
+		shutdown(this->_socket, SHUT_WR);
+		close(this->_socket);
+		this->_socket = -1; // Removes reference
+	}
 }
 
 std::string Net::Socket::GetIP() const
@@ -23,7 +31,12 @@ std::string Net::Socket::GetIP() const
 	return std::string(ip);
 }
 
-int Net::Socket::GetPort() const
+void Net::Socket::GetIpArray(uint8_t* ip) const
+{
+	*ip = this->_address.sin_addr.s_addr;
+}
+
+uint16_t Net::Socket::GetPort() const
 {
 	return ntohs(this->_address.sin_port);
 }
@@ -33,17 +46,73 @@ std::string Net::Socket::GetAddress() const
 	return this->GetIP() + ":" + std::to_string(this->GetPort());
 }
 
-void Net::Socket::Send(const std::string& msg) const
+std::string Net::Socket::GetSocketType() const
 {
-	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock (read/write)
+	int socket_type;
+	socklen_t optlen = sizeof(socket_type);
+
+	// Get socket type
+	getsockopt(this->_socket, SOL_SOCKET, SO_TYPE, &socket_type, &optlen);
 	
-	send(this->_socket, msg.c_str(), msg.size(), 0);
+	switch(socket_type)
+	{
+		case SOCK_STREAM:
+			return "tcp";
+		break;
+		
+		case SOCK_DGRAM:
+			return "udp";
+		break;
+		
+		default:
+			return "unknown";
+		break;
+	}
 }
 
-void Net::Socket::Send(const std::vector<unsigned char>& msg) const
+std::chrono::system_clock::time_point Net::Socket::GetLastRecievedTime() const
 {
-	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock (read/write)
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+
+	return this->_recieved_time;
+}
+
+ssize_t Net::Socket::Send(const std::string& msg) const
+{
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
 	
-	send(this->_socket, &(msg[0]), msg.size(), 0);
+	return send(this->_socket, msg.c_str(), msg.size(), 0);
+}
+
+ssize_t Net::Socket::Send(const std::vector<unsigned char>& msg) const
+{
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+	
+	return send(this->_socket, &(msg[0]), msg.size(), 0);
+}
+
+void Net::Socket::UDPSend(const std::string& msg) const
+{
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+
+	socklen_t address_len = sizeof(this->_address);
+	
+	sendto(this->_socket, msg.c_str(), msg.size(), 0, (struct sockaddr*)&this->_address, address_len);
+}
+
+void Net::Socket::UDPSend(const std::vector<unsigned char>& msg) const
+{
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+	
+	socklen_t address_len = sizeof(this->_address);
+	
+	sendto(this->_socket, &(msg[0]), msg.size(), 0, (struct sockaddr*)&this->_address, address_len);
+}
+
+void Net::Socket::UpdateLastRecievedTime()
+{
+	std::lock_guard<std::mutex> guard(this->_mutex); // socket lock
+
+	this->_recieved_time = std::chrono::system_clock::now();
 }
 

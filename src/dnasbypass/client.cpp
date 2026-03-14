@@ -1186,7 +1186,7 @@ DNASBypass::Client::Client(int socket, struct sockaddr_in address, SSL* ssl)
 
 DNASBypass::Client::~Client()
 {
-	this->Disconnect();
+	
 }
 
 void DNASBypass::Client::Listen()
@@ -1241,7 +1241,9 @@ void DNASBypass::Client::Disconnect()
 	SSL_free(this->_ssl);
 	
 	this->Close();
-	g_dnasbypass_server->onClientDisconnect(*this);
+	g_dnasbypass_server->onClientDisconnect(
+		std::static_pointer_cast<Net::Socket>(shared_from_this())
+	);
 }
 
 void DNASBypass::Client::Send(const std::string& msg) const
