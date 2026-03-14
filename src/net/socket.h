@@ -16,28 +16,23 @@ namespace Net
 		protected:
 			int                                   _socket;        /**< The socket file descriptor. */
 			struct sockaddr_in                    _address;       /**< The socket address information. */
-			std::chrono::system_clock::time_point _recieved_time; /**< Time when data was last received. */
+			std::chrono::system_clock::time_point _received_time; /**< Time when data was last received. */
 			mutable std::mutex                    _mutex;         /**< Mutex for thread safety. */
 
 		public:
 			Socket();
+			~Socket();
 			
 			/**
 			 * @brief Closes the socket.
 			 */
-			void Close();
+			void Close() noexcept;
 			
 			/**
 			 * @brief Gets the IP address associated with the socket.
 			 * @return The IP address as a string.
 			 */
 			std::string GetIP() const;
-			
-			/**
-			 * @brief Gets the IP address associated with the socket as an array of bytes.
-			 * @param ip Pointer to an array where the IP will be stored.
-			 */
-			void GetIpArray(uint8_t* ip) const;
 			
 			/**
 			 * @brief Gets the port number associated with the socket.
@@ -61,7 +56,7 @@ namespace Net
 			 * @brief Gets the time when the socket last received data.
 			 * @return The last received time as a system_clock::time_point.
 			 */
-			std::chrono::system_clock::time_point GetLastRecievedTime() const;
+			std::chrono::system_clock::time_point GetLastReceivedTime() const;
 
 			/**
 			 * @brief Sends a message over the socket.
@@ -76,21 +71,9 @@ namespace Net
 			ssize_t Send(const std::vector<unsigned char>& msg) const;
 			
 			/**
-			 * @brief Sends a UDP message over the socket.
-			 * @param msg The message to send as a string.
-			 */
-			void UDPSend(const std::string& msg) const;
-			
-			/**
-			 * @brief Sends a UDP message over the socket.
-			 * @param msg The message to send as a vector of unsigned chars.
-			 */
-			void UDPSend(const std::vector<unsigned char>& msg) const;
-			
-			/**
 			 * @brief Updates the last received time to the current system time.
 			 */
-			void UpdateLastRecievedTime();
+			void UpdateLastReceivedTime();
 
 			/**
 			 * @brief Empty virtual function required for static_cast in C++.

@@ -1240,7 +1240,6 @@ void DNASBypass::Client::Disconnect()
 	SSL_shutdown(this->_ssl);
 	SSL_free(this->_ssl);
 	
-	this->Close();
 	g_dnasbypass_server->onClientDisconnect(
 		std::static_pointer_cast<Net::Socket>(shared_from_this())
 	);
