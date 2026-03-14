@@ -24,11 +24,11 @@ add_executable(DNASBypass
 	src/urlrequest.cpp
 )
 
-target_include_directories(DNASBypass PUBLIC libs/openssl-1.0.2q/include src)
-target_link_directories(DNASBypass PUBLIC libs/openssl-1.0.2q/lib)
+target_include_directories(DNASBypass PUBLIC libs/openssl-1.0.2u/include src)
+target_link_directories(DNASBypass PUBLIC libs/openssl-1.0.2u/lib)
 
-find_library(SSL_LIBRARY ssl HINTS ${CMAKE_SOURCE_DIR}/libs/openssl-1.0.2q/lib)
-find_library(CRYPTO_LIBRARY crypto HINTS ${CMAKE_SOURCE_DIR}/libs/openssl-1.0.2q/lib)
+find_library(SSL_LIBRARY ssl HINTS ${CMAKE_SOURCE_DIR}/libs/openssl-1.0.2u/lib)
+find_library(CRYPTO_LIBRARY crypto HINTS ${CMAKE_SOURCE_DIR}/libs/openssl-1.0.2u/lib)
 find_library(DL_LIBRARY dl)
 
 target_link_libraries(DNASBypass PRIVATE ${SSL_LIBRARY} ${CRYPTO_LIBRARY} ${DL_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} atomizes)
