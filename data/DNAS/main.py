@@ -57,7 +57,7 @@ def main():
 	modulos = []
 	signatures = getCollectedSignatures()
 	
-	root_dir = "./"
+	root_dir = "./Games/"
 	game_names = [name for name in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, name)) and name != "patch"]
 	game_names.sort() 
 	

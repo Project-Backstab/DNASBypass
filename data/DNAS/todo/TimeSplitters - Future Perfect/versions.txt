@@ -1,0 +1,7 @@
+PAL:
+	SLED-53066	TimeSplitters: Future Perfect (Demo)	
+	SLES-52993	TimeSplitters: Future Perfect (Beta)
+
+NTSC-U
+	SLUS 21148	TimeSplitters: Future Perfect
+	
